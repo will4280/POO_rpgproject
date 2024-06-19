@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./assets/styles.css"/>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            display: flex; 
+            min-height: 99vh; 
+            justify-content: center; 
+            align-items: center; 
+            background-color: #f0f0f0; 
+            background-image: url('https://i.pinimg.com/originals/1c/1d/7a/1c1d7a7fd81ff42a9275fd5a7ebfb597.jpg'); 
+            background-size: cover; 
+            background-position: center; 
+            background-repeat: no-repeat; 
+            background-attachment: fixed; 
+        }
+
+        .fightarea {
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+            padding: 20px; 
+        }
+
+        #char, #monster {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start; 
+            padding: 45px;
+            width: calc(50% - 68px); 
+            box-sizing: border-box; 
+            background: linear-gradient(to right, rgb(243, 247, 242), #5f5); 
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent; 
+        }
+
+
+        .lifebar {
+            height: 10px;
+            width: 360px; 
+            border: 1px solid #333;
+            border-radius: 5px;
+            overflow: hidden; 
+        }
+
+        .lifebar .bar {
+            height: 100%;
+            width: 100%; 
+            background-color: red;
+            border-radius: 5px;
+        }
+
+        .log {
+            position: fixed;
+            bottom: 10px; 
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100%; 
+            max-width: 800px; 
+            height: 170px;
+            overflow: auto; 
+            color: #ffffff; 
+            background-color: rgba(0, 0, 0, 0.5); 
+            border-radius: 10px; 
+            padding: 10px; 
+            border: 1px dotted #999; 
+            text-align: center;
+        }
+
+        .attack-button-container {
+            text-align: center; 
+            margin-top: 8px; 
+            position: absolute;
+            bottom: 7px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        .attack-button-container button {
+            padding: 10px 20px;
+            border: 2px solid #093d32; 
+            border-radius: 8px; 
+            font-size: 0.9rem; 
+            font-weight: bold; 
+            color: white; 
+            background-color: #0d6105; 
+            box-shadow: -2px 3px 0 #058301, -4px 6px 0 #235f30; 
+            cursor: pointer; 
+        }
+
+        .attack-button-container button:hover {
+            box-shadow: inset -2px 2px 0 #222; 
+        }
+
+        .name {
+            white-space: nowrap; 
+            overflow: hidden; 
+            text-overflow: ellipsis; 
+        }
+    </style>
+</head>
+
+<body>
+    <div class="fightarea">
+        <div id="char">
+            <div class="character-image">
+                <img src="https://pngimg.com/uploads/wizard/wizard_PNG9.png" alt="Imagem do Mago">
+            </div>
+            <strong class="name">Nome do Personagem 1</strong>
+            <div class="lifebar">
+                <div class="bar" style="width: 50%;"></div>
+            </div>
+            <div class="attack-button-container">
+                <button class="attackButton">Atacar</button>
+            </div>
+        </div>
+        <div id="monster">
+            <div class="character-image">
+                <img src="https://aurelianolp.github.io/ProjetoJogoJS/assets/image/mostro.png" alt="Imagem do Mago">
+            <strong class="name">Nome do Personagem 2</strong>
+            <div class="lifebar">
+                <div class="bar" style="width: 50%;"></div>
+            </div>
+            <div class="attack-button-container">
+                <button class="attackButton">Atacar</button>
+            </div>
+        </div>
+    </div>
+
+    <ul class="log"></ul>
+
+    <script src="assets/js/classes.js"></script>
+    <script src="assets/js/script.js"></script>
+</body>
+</html>
